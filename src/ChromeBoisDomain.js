@@ -11,7 +11,7 @@ export default class ChromeBoisDomain extends Component {
   }
 
   handleMouseMove = (event) => {
-    this.setState({ x: event.pageX, y: event.pageY });
+    this.setState({ x: event.clientX, y: event.clientY });
     
     const { x, y } = this.state;
     drawChromeBoiAtCoords(x,y)
@@ -21,19 +21,19 @@ export default class ChromeBoisDomain extends Component {
      */
   }
   
-  handleClick(e) {
-
+  handleClick() {
+    toggleCycling()
   }
   /* TODO: Create -A- an event handler which, when fired, -B- invokes the provided `toggleCycling` function with no arguments. -C- Don't forget the click event listener that should fire it!
    */
   
   handleResize(e) {
     if (e.key === 'a') {
-
-    } if (e.key === 's') {
-
+      resize()
+    } else if (e.key === 's') {
+      resize
     } else {
-
+      resize(null)
     }
   }
 
@@ -43,7 +43,7 @@ export default class ChromeBoisDomain extends Component {
   render() {
     return (
       <canvas 
-        onClick={this.toggleCycling}
+        onClick={this.handleClick}
         onMouseMove={this.handleMouseMove}
         width='900'
         height='600'
