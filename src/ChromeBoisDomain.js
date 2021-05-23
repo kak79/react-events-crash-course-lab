@@ -23,7 +23,7 @@ export default class ChromeBoisDomain extends Component {
   
   handleClick(e) {
 
-    }
+  }
   /* TODO: Create -A- an event handler which, when fired, -B- invokes the provided `toggleCycling` function with no arguments. -C- Don't forget the click event listener that should fire it!
    */
   
