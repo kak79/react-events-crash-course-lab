@@ -29,9 +29,9 @@ export default class ChromeBoisDomain extends Component {
   
   handleResize(e) {
     if (e.key === 'a') {
-      resize()
+      resize('+')
     } else if (e.key === 's') {
-      resize
+      resize('-')
     } else {
       resize(null)
     }
@@ -43,6 +43,7 @@ export default class ChromeBoisDomain extends Component {
   render() {
     return (
       <canvas 
+        onResize={this.handleResize}
         onClick={this.handleClick}
         onMouseMove={this.handleMouseMove}
         width='900'
